@@ -1,0 +1,31 @@
+@font-face {
+       font-family: 'love';
+       src = url('loveRiot.ttf');
+ 
+}
+
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }
+.pad-top-10{padding-top:10px;}
+.pad-top-15{padding-top:15px;}
+
+#footer
+{
+	background-color: #222;
+}
+
+.color_del_texto_blanco 
+{
+	color:white;
+}
+
+h1,a{
+	font-family: 'Love Ya Like A Sister', cursive;
+}
+* {
+	font-family: 'Quicksand', sans-serif;
+}
