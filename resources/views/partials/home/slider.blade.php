@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-            <h1>Mira lo que Cumplemes.cl tiene para tu Polola!</h1>
+            <h1>Mira lo que Cumplemes.cl tiene para tu Polol@!</h1>
           </div>
           <div class="col-md-3">
             <img src="{{asset('images/icono.png') }}" alt="">

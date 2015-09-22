@@ -29,3 +29,49 @@ h1,a{
 * {
 	font-family: 'Quicksand', sans-serif;
 }
+
+.separador
+{
+	border-top:3px dotted rgba(245, 67, 67, 0.6);
+	padding: 10px;
+}
+
+.background-pattern
+{
+	background-image: url('../images/patron-corazon.jpg');
+	background-repeat: repeat;
+}
+
+#footer
+{
+	color:#F2F2F2;
+	background-image: url('../images/patron-03.jpg');
+	background-repeat: repeat;
+
+}
+
+.producto
+{
+	width: 250px;
+	height: 350px;
+	border-bottom: 3px solid rgba(245, 67, 67, 0.6);
+	-moz-transition: border-bottom 0.2s ease;
+	-webkit-transition: border-bottom 0.2s ease;
+	display: inline-block;
+	font-size:10px;
+	margin-right:25px;
+}
+	.producto:hover
+	{
+		border-bottom:4px solid rgba(245, 67, 67, 0.6);
+	}
+	.precio{
+		font-size: 20px;
+		position:relative;
+		bottom:2px;
+		right:10px;
+		text-align: center;
+	}
+	
+
+
