@@ -11,7 +11,8 @@
 		<div class="container top10	">
 
 			@include('partials.home.producto')
-						@include('partials.home.producto')
+			
+			@include('partials.home.producto')
 
 			@include('partials.home.producto')
 

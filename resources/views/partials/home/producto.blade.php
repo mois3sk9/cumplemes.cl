@@ -6,8 +6,11 @@
 
 	<div class="footer_producto">
 		<div class="col-md-12"><h3>Dados para parejas</h3></div>
-
-		<span class="precio">$5.990</span>
+		<div class="col-md-12">
+			<div class="clearfix"></div>
+			<span class="precio center">$5.990</span>
+		</div>
+		
 	</div>
 	
 </div>
