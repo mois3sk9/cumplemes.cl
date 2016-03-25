@@ -56,11 +56,19 @@
       
            <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Mi cuenta</a></li>
-            <li><a href="#">Configuracion</a></li>
-            <li><a href="#">Historial de compras</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Salir</a></li>
+              @if(Auth::check())
+                 <li><a href="#">Mi cuenta</a></li>
+                  <li><a href="#">Configuracion</a></li>
+                <li><a href="#">Historial de compras</a></li>
+              @else
+                <li><a href="{{route('login')}}">Iniciar sesion</a></li>
+                <li><a href="{{route('registrarUsuario')}}">Registrarse</a></li>
+              @endif
+              
+            @if(Auth::check())
+                 <li role="separator" class="divider"></li>
+                <li><a href="{{ route('salir') }}">Salir</a></li>
+            @endif
           </ul>
         </li>
       </ul>

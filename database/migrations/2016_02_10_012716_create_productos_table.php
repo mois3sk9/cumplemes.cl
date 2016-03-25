@@ -20,7 +20,7 @@ class CreateProductosTable extends Migration
             $table->integer('precio');
             $table->string('codigo');
             $table->integer('tipo_id');
-            $table->foreign('tipo_id', 'tipos');
+            //$table->foreign('tipo_id')->references('id')->on('tipos');
             $table->timestamps();
         });
     }

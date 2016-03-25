@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use cumplemes\Http\Requests;
 use cumplemes\Http\Controllers\Controller;
-use cumplemes\Tipo;
 use cumplemes\Producto;
+use cumplemes\CarroCompra\CarroCompra as Carrito;
 
-class HomeController extends Controller
+class CarritoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	//print_r(Producto::all());
-      return view('home.index', ['productos' =>  Producto::all()]);
-      
+        //
     }
 
     /**
@@ -41,8 +39,20 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request, [
+            'id_producto'=>'required|Numeric'
+        ]);
+        
+        $carrito = new Carrito($request);
+        
+        $carrito->agregar($request->input('id_producto'));
+        
+       
+       return Response()->json(['fueAlmacenado'=> 1]);
     }
+    
+   
 
     /**
      * Display the specified resource.
@@ -84,8 +94,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($request, $id)
     {
-        //
+        
+        $productos =  $request->session()->get('productos');
+        $request->session()->forget('productos');
     }
 }

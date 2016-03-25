@@ -8,23 +8,30 @@
     @section('fuentes')
     <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Quicksand' rel='stylesheet' type='text/css'>
     @show
-    
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/boostrap-cumple-mes-style.css') }}" />
+    <!--<link rel="stylesheet" href="{{ asset('css/jquery.bxslider.css') }}" />-->
+    <link rel="stylesheet" href="{{ asset('css/responsiveslides.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" />
+
+
   </head>
   <body>
-      
+
       {{-- Barra de navegacion --}}
       @include('partials.master_partials.nav')
-      
+
       {{--Contenido dinamico--}}
       <section class="contenido">
         @yield('contenido')
       </section>
-      
-      
+
+
         <section id="footer" class="top10">
           <div class="container">
+          {{-- footer de la plicacion --}}
           @include('partials.master_partials.footer')
           </div>
         </section>
@@ -33,6 +40,11 @@
 
   @section('scripts')
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="{{ asset('js/configuracionCsfr.js') }}"></script>
   <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap-config.js') }}"></script>
+  <script src="{{ asset('js/responsiveslides.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/carrito.compra.js') }}"></script>
   @show
 </html>

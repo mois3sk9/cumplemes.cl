@@ -18,7 +18,7 @@ class ProductosSeeder extends Seeder
 		DB::table('productos')->insert([
 				'nombre' => 'Caja bombones',
 				'descripcion' => 'Manualidades del sur',
-				'precio' => 3000, 
+				'precio' => 3000,
 				'codigo' => '099909',
 				'tipo_id' => 1
 		]);
@@ -28,6 +28,41 @@ class ProductosSeeder extends Seeder
 				'precio' => 8000,
 				'codigo' => '109009',
 				'tipo_id' => 2
+		]);
+		DB::table('productos')->insert([
+				'nombre' => 'Figurita',
+				'descripcion' => 'Figuritas kawaii',
+				'precio' => 7000,
+				'codigo' => '0989023',
+				'tipo_id' => 3
+		]);
+		DB::table('productos')->insert([
+				'nombre' => 'Figurita',
+				'descripcion' => 'Figuritas kawaii',
+				'precio' => 7000,
+				'codigo' => '0989023',
+				'tipo_id' => 3
+		]);
+		DB::table('productos')->insert([
+				'nombre' => 'Figurita',
+				'descripcion' => 'Figuritas kawaii',
+				'precio' => 7000,
+				'codigo' => '0989023',
+				'tipo_id' => 3
+		]);
+		DB::table('productos')->insert([
+				'nombre' => 'Figurita',
+				'descripcion' => 'Figuritas kawaii',
+				'precio' => 7000,
+				'codigo' => '0989023',
+				'tipo_id' => 3
+		]);
+		DB::table('productos')->insert([
+				'nombre' => 'Figurita',
+				'descripcion' => 'Figuritas kawaii',
+				'precio' => 7000,
+				'codigo' => '0989023',
+				'tipo_id' => 3
 		]);
 		DB::table('productos')->insert([
 				'nombre' => 'Figurita',
