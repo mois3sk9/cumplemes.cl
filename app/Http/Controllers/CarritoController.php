@@ -46,10 +46,17 @@ class CarritoController extends Controller
         
         $carrito = new Carrito($request);
         
-        $carrito->agregar($request->input('id_producto'));
+        $estado  = $carrito->agregar($request->input('id_producto'));
+        $cantidad  = $carrito->cantidad();
         
+       return Response()->json(['estado'=> $estado, 'cantidad'=>$cantidad, 'data'=>$carrito->getCarro()]);
+    }
+    
+    public function cantidad(Request $request) {
+       // $request = new Request();
+        $carrito = new Carrito($request);
        
-       return Response()->json(['fueAlmacenado'=> 1]);
+        return Response()->json(['cantidad'=>$carrito->cantidad()]);
     }
     
    

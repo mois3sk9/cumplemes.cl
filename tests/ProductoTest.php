@@ -4,16 +4,17 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class TestProducto extends TestCase
 {
     /**
-     * A basic functional test example.
+     * A basic test example.
      *
      * @return void
      */
-    public function testBasicExample()
+   
+    public function testExiste()
     {
-        $this->visit('/')
-             ->see('cumplemes');
+        $response = $this->call('GET', '/productos/show/1');
+        $this->assertEquals(200, $response->getStatusCode());
     }
 }

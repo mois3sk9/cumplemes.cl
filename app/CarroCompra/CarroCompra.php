@@ -25,16 +25,18 @@ class CarroCompra
         return $this->request->session();
     }
     
-    public function agregar($idProducto, $cantidad = 10)
+    public function agregar($idProducto, $cantidad = 1)
     {
+        if(!$this->validaciones()) return false;
+        
         if($this->contieneProductos()){
             $collect = Collect($this->getCarro());
-           
+            
             $existe = false;
             $collect->transform(function($item, $key)use($idProducto, &$existe, $cantidad){
              
                if($item['id'] == $idProducto){//si el producto ya esta en el carro de compras, solo modificamos la cantidad
-                    $item['cantidad'] = $cantidad;
+                    $item['cantidad'] += $cantidad;
                     $existe = true;
                     return $item;
                 }
@@ -51,7 +53,7 @@ class CarroCompra
             $this->getSession()->put('productos', $collect->toArray());
            
             
-            return 1;
+            return true;
             
         } 
       
@@ -60,13 +62,35 @@ class CarroCompra
        
         $this->getSession()->put('productos', [$collect->toArray()]);
      
-        return 1;
+        return true;
     }
     
     public function quitar($idProducto)
     {
-       
-        $this->getSession()->pull('productos', $idProducto);
+        $collect = Collect($this->getCarro());
+        
+        $collect->transform(function($item, $key)use($idProducto){
+            if($item['id'] == $idProducto){ 
+                $item['cantidad'] = 0;
+                return $item;
+            }
+        });
+        //$this->getSession()->pull('productos', $idProducto);
+    }
+    
+    public function reducirCantidadDeProducto($idProducto) {
+        
+        $collect = Collect($this->getCarro());
+        
+        $collect->transform(function($item, $key)use($idProducto){
+            if($item['id'] == $idProducto){
+                if($item['cantidad'] > 0){
+                    $item['cantidad']-=1;
+                    return $item;
+                }
+                
+            }
+        });
     }
     
     public function getCarro()
@@ -79,12 +103,52 @@ class CarroCompra
     }
     public function contieneProductos()
     {
-        return $this->getSession()->has('productos');
+        if($this->getSession()->has('productos')) {
+            $collect = Collect($this->getCarro());
+            $estado = false;
+            $collect->map(function($item, $key) use(&$estado){
+                if($item['cantidad']>0) {// si existe algun producto con cantidad mayor a 0 es que hay productos en el carro
+                    $estado = true;
+                }
+            });
+            
+            return $estado;
+        }
+        
+        return false;
     }
     public function productoEnCarro($idProducto)
     {
         
+    }
+    
+    public function cantidad()
+    {
+        if($this->contieneProductos()) {
+            $cantidad = 0;
+            $collect = Collect($this->getCarro());
+            $collect->map(function($item, $key) use (&$cantidad){
+                $cantidad+=$item['cantidad'];//sumamos la cantidad de cada producto
+            });
+            return $cantidad;
+        }
         
+        return 0;
+    }
+    
+    private function validaciones()
+    {
+        //aqui todas las validaciones para verificar si se debe agregar un producto o no
+        $estado = true;
+        if(!$this->estaDisponible()) $estado = false;
+        
+        return $estado;
+    }
+    
+    public function estaDisponible()
+    {
+        //todo
+        return true;
     }
     
 }

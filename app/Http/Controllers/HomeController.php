@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function index()
     {
     	//print_r(Producto::all());
-      return view('home.index', ['productos' =>  Producto::all()]);
+      return view('home.index', ['productos' =>  Producto::disponibles()->get()]);
       
     }
 

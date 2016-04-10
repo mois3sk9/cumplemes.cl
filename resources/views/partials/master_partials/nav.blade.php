@@ -1,5 +1,5 @@
  
- <nav class="navbar navbar-default navbar-static-top  navbar-fixed-top">
+ <nav class="navbar navbar-default   {{ isset($static) ? 'navbar-static-top' : 'navbar-fixed-top' }} ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -42,7 +42,7 @@
            <span class="caret"></span></a>
 
            <ul class="dropdown-menu">
-            <li><a href="#">Cantidad de productos: 0</a></li>
+               <li><a href="#">Cantidad de productos: <span id="navCantidadProductos">0</span></a></li>
             <li><a href="#">Total: $0</a></li>
             <li><a href="#">Ir al detalle del carro</a></li>
           </ul>

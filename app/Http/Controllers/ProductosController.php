@@ -18,7 +18,7 @@ class ProductosController extends Controller
 	 */
 	public function index()
 	{
-
+            
 	}
 
 	/**
@@ -50,8 +50,8 @@ class ProductosController extends Controller
 	 */
 	public function show($id)
 	{
-		$producto  = Producto::find($id);
-		return view('Productos.producto', ['producto' => $producto]);
+            $producto  = Producto::disponibles()->find($id);
+            return view('Productos.producto', ['producto' => $producto]);
 	}
 
 	/**

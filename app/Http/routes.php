@@ -22,8 +22,8 @@ Route::get('/', [
   ]);*/
 
 Route::get('productos/show/{id}', [
-		'uses' =>'ProductosController@show',
-		'as' => 'productos/show'
+    'uses' =>'ProductosController@show',
+    'as' => 'verProducto'
 ]);
 
 // Authentication routes...
@@ -51,5 +51,11 @@ Route::post('auth/register', [
     'uses' => 'Auth\AuthController@postRegister',
     'as' => 'guardarUsuario'
 ]);
+Route::get('carrito/cantidad',[
+    'uses' =>'CarritoController@cantidad',
+    'as' => 'carrito.cantidad'
+]);
 
 Route::resource('carrito', 'CarritoController');
+
+

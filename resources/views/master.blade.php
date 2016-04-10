@@ -15,14 +15,16 @@
     <!--<link rel="stylesheet" href="{{ asset('css/jquery.bxslider.css') }}" />-->
     <link rel="stylesheet" href="{{ asset('css/responsiveslides.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" />
-
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+    
 
   </head>
   <body>
 
       {{-- Barra de navegacion --}}
+      @section('nav')
       @include('partials.master_partials.nav')
-
+      @show
       {{--Contenido dinamico--}}
       <section class="contenido">
         @yield('contenido')
@@ -45,6 +47,10 @@
   <script src="{{ asset('js/bootstrap-config.js') }}"></script>
   <script src="{{ asset('js/responsiveslides.min.js') }}"></script>
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="{{ asset('js/carrito.compra.js') }}"></script>
+  <script src="{{ asset('js/configuracionToastr.js') }}"></script>
+  <script src="{{ asset('js/home.productos.js') }}"></script>
+  <!--<script src="{{ asset('js') }}"></script>-->
   @show
 </html>

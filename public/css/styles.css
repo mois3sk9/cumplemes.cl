@@ -16,72 +16,84 @@
 
 #footer
 {
-	background-color: #222;
+    background-color: #222;
+    
+}
+.contenido {
+    min-height: 60em;
+}
+
+.encima {
+    cursor:pointer;
 }
 
 .color_del_texto_blanco
 {
-	color:white;
+    color:white;
 }
 
 h1,a{
-	font-family: 'Love Ya Like A Sister', cursive;
+     font-family: 'Love Ya Like A Sister', cursive;
 }
 * {
-	font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+h6 {
+    display: inline;
 }
 
 .separador
 {
-	border-top:3px dotted rgba(245, 67, 67, 0.6);
-	padding: 10px;
+    border-top:3px dotted rgba(245, 67, 67, 0.6);
+    padding: 10px;
 }
 
 .background-pattern
 {
-	background-image: url('../images/patron-corazon.jpg');
-	background-repeat: repeat;
+    background-image: url('../images/love-pattern2.png');
+    background-repeat: repeat;
+    
 }
 
 #footer
 {
-	color:#F2F2F2;
-	background-image: url('../images/patron-03.jpg');
-	background-repeat: repeat;
+    color:#F2F2F2;
+    background-image: url('../images/patron-03.jpg');
+    background-repeat: repeat;
 
 }
 
 .producto
 {
-	width: 250px;
-	height: 400px;
-	border-bottom: 3px solid rgba(245, 67, 67, 0.6);
-	-moz-transition: border-bottom 0.2s ease;
-	-webkit-transition: border-bottom 0.2s ease;
-	-moz-transition: box-shadow 0.5s ease;
-	-webkit-transition: box-shadow 0.5s ease;
-	display: inline-block;
-	font-size:10px;
-	margin-right:25px;
-	cursor: pointer;
+    width: 250px;
+    height: 400px;
+    border-bottom: 3px solid rgba(245, 67, 67, 0.6);
+    -moz-transition: border-bottom 0.2s ease;
+    -webkit-transition: border-bottom 0.2s ease;
+    -moz-transition: box-shadow 0.5s ease;
+    -webkit-transition: box-shadow 0.5s ease;
+    display: inline-block;
+    font-size:10px;
+    margin-right:25px;
+    cursor: pointer;
 }
 	.producto:hover
 	{
-		border-bottom:4px solid rgba(245, 67, 67, 0.6);
+            border-bottom:4px solid rgba(245, 67, 67, 0.6);
 
-		-webkit-box-shadow: 0px -3px 41px 0px rgba(255,148,148,1);
-		-moz-box-shadow: 0px -3px 41px 0px rgba(255,148,148,1);
-		box-shadow: 0px -3px 41px 0px rgba(255,148,148,1);
+            -webkit-box-shadow: 0px -3px 41px 0px rgba(255,148,148,1);
+            -moz-box-shadow: 0px -3px 41px 0px rgba(255,148,148,1);
+            box-shadow: 0px -3px 41px 0px rgba(255,148,148,1);
 	}
 	.producto:active:hover
 	{
-		box-shadow: 0 0 0 0;
+            box-shadow: 0 0 0 0;
 	}
 
 	.precio {
-		font-size: 20px;
-		position:relative;
+            font-size: 20px;
+            position:relative;
 
-		float:right;
-		cursor:pointer;
+            float:right;
+            cursor:pointer;
 	}
