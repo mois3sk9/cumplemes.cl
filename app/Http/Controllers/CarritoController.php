@@ -8,6 +8,8 @@ use cumplemes\Http\Requests;
 use cumplemes\Http\Controllers\Controller;
 use cumplemes\Producto;
 use cumplemes\CarroCompra\CarroCompra as Carrito;
+use cumplemes\Carrocompra\CarroCompraProxy;
+
 
 class CarritoController extends Controller
 {
@@ -16,9 +18,12 @@ class CarritoController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $carroProxy = new CarroCompraProxy(new Carrito($request));
+        $productos = $carroProxy->getProductos();
+        return view('partials.carro.contenido_carro', ['productos'=>$productos]);
+        //return Response()->json(['data'=>$productos]);
     }
 
     /**

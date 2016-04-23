@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate as Illuminate;
+use cumplemes as cumplemes;
+
 return [
 
     /*
@@ -136,6 +139,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+    	
 
         /*
          * Application Service Providers...
@@ -144,6 +148,7 @@ return [
         cumplemes\Providers\AuthServiceProvider::class,
         cumplemes\Providers\EventServiceProvider::class,
         cumplemes\Providers\RouteServiceProvider::class,
+    	cumplemes\Providers\CarroCompraServiceProvider::class,
 
     ],
 

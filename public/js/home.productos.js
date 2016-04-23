@@ -8,6 +8,6 @@
 function visualizarProducto(idProducto, url)
 { 
     console.log(idProducto, url);
-    window.location.href = url;
+    //window.location.href = url;
 }
     
